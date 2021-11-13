@@ -9,7 +9,7 @@
    
    ## IV SEM -Incharge
    - [ADA](https://github.com/Ajith-Kumar-G/Clg-Labs/tree/main/IV%20sem/ADA_LAB) -A1 GRP
-
+   - [DBMS](https://github.com/Ajith-Kumar-G/Clg-Labs/tree/main/IV%20sem/DMBS) -B1 KVN
    ## V SEM -Incharge
    - [AI](https://github.com/Ajith-Kumar-G/Clg-Labs/tree/main/V%20sem/AI_Lab) -A1 JSN 
    - [IOT](https://github.com/Ajith-Kumar-G/Clg-Labs/tree/main/V%20sem/IOT-Lab) -A1 AD
