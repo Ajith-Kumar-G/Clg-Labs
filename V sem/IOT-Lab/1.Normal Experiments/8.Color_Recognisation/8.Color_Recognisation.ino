@@ -1,15 +1,6 @@
-const int s0 = 8;  
-const int s1 = 9;  
-const int s2 = 12;  
-const int s3 = 11;  
-const int out = 10;   
-int redLed = 2;  
-int greenLed = 3;  
-int blueLed = 4;
-int red = 0;  
-int green = 0;  
-int blue = 0;  
-    
+const int s0 = 8, s1 = 9, s2 = 12, s3 = 11, out = 10;   
+int redLed = 2, greenLed = 3, blueLed = 4;
+int red = 0, green = 0,blue = 0;  
 void setup()   
 {  
   Serial.begin(9600); 
@@ -75,4 +66,4 @@ void color()
   blue = pulseIn(out, digitalRead(out) == HIGH ? LOW : HIGH);  
   digitalWrite(s2, HIGH);  
   green = pulseIn(out, digitalRead(out) == HIGH ? LOW : HIGH);  
-}_R
+}
