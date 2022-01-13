@@ -1,8 +1,8 @@
-class Graph():
+class Graph:
     def __init__(self, vertices):
         self.V = vertices
-        self.graph = [[0 for column in range(vertices)]
-                      for row in range(vertices)]
+        self.graph = [[0 for _ in range(vertices)]
+                      for _ in range(vertices)]
 
     def print_solution(self, dist):
         print("Vertex \tDistance from Source")
@@ -15,14 +15,12 @@ class Graph():
             if dist[v] < min and sptSet[v] == False:
                 min = dist[v]
                 min_index = v
-
         return min_index
 
     def add_edge(self, src, dest, weight):
         self.graph[src][dest] = self.graph[dest][src] = weight
 
     def dijkstra(self, src):
-
         dist = [9999] * self.V
         dist[src] = 0
         sptSet = [False] * self.V
@@ -37,14 +35,16 @@ class Graph():
         self.print_solution(dist)
 
 
-g = Graph(int(input("Enter number of nodes in the topology: ")))
-c = int(input("Enter number of edges: "))
+def main():
+    g = Graph(int(input("Enter number of nodes in the topology: ")))
+    c = int(input("Enter number of edges: "))
+    for i in range(c):
+        src, dest, cost = [int(_) for _ in input(
+            "Enter [SRC] [DEST] [WEIGHT]: ").split(' ')]
+        g.add_edge(src, dest, cost)
+    src = int(input("Enter [SRC] to find costs: "))
+    g.dijkstra(src)
 
-for i in range(c):
-    src, dest, cost = [int(_) for _ in input(
-        "Enter [SRC] [DEST] [WEIGHT]: ").split(' ')]
-    g.add_edge(src, dest, cost)
 
-src = int(input("Enter [SRC] to find costs: "))
-
-g.dijkstra(src)
+if __name__ == '__main__':
+    main()
