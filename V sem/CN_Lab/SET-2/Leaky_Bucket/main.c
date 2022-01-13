@@ -20,7 +20,7 @@ int main()
     {
         if( (packet_sz[i] + p_sz_rm) > b_size)
             if(packet_sz[i] > b_size)
-                printf("\n\nIncoming packet size (%dbytes) is Greater than bucket capacity (%dbytes)-PACKET REJECTED", packet_sz[i], b_size);
+                printf("\n\nIncoming packet size (%d bytes) is Greater than bucket capacity (%d bytes)-PACKET REJECTED", packet_sz[i], b_size);
             else
                 printf("\n\nBucket capacity exceeded-PACKETS REJECTED!!");
         else

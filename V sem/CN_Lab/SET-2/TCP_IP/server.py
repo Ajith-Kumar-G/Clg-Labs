@@ -20,7 +20,7 @@ while 1:
     else:
         l: str = "The required file doesn't exits!"
 
-    print("Recieved from client: ", l)
+    print("Sending To client: ", l)
 
     connectionSocket.send(l.encode())
     if flag:
