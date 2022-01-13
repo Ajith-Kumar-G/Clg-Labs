@@ -54,18 +54,28 @@ class router {
 }r[10];
 
 void router::build(int j)
- {   /* if(j==0){
-          printf("For Node A\n");
-          r[j].display();
+ {
+
+    /* if(i==0){
+          printf("For Node A after receiving from %d\n",j);
+          r[i].display();
           printf("\n ----------------\n\n");
         }*/
       for(int i=0;i<n;i++)
-        for(int k=0;(i!=j)&&(k<n);k++)
-          if(table_old[i]!=99)
+        for(int k=0;(i!=j)&&(k<n);k++){
+          if(table_old[i]!=99){
             if((table_new[i]+r[i].table_new[k])<table_new[k]) {
               table_new[k]=table_new[i]+r[i].table_new[k];
               adj_new[k]=(char)('A'+i);
-            }
+
+            /*  if(j==0){
+              printf("For Node A after receiving from %d \n",i);
+              r[j].display();
+              printf("\n ----------------\n\n");
+            }*/
+          }
+        }
+      }
     }
 
 void build_table() {
