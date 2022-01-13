@@ -54,7 +54,11 @@ class router {
 }r[10];
 
 void router::build(int j)
- {
+ {   /* if(j==0){
+          printf("For Node A\n");
+          r[j].display();
+          printf("\n ----------------\n\n");
+        }*/
       for(int i=0;i<n;i++)
         for(int k=0;(i!=j)&&(k<n);k++)
           if(table_old[i]!=99)
