@@ -15,3 +15,8 @@
    - [IOT](https://github.com/Ajith-Kumar-G/Clg-Labs/tree/main/V%20sem/IOT-Lab) -A1 AD
    - [CN](https://github.com/Ajith-Kumar-G/Clg-Labs/tree/main/V%20sem/CN_Lab) -A1 LJJ
    - [USP](https://github.com/Ajith-Kumar-G/Clg-Labs/tree/main/V%20sem/USP_Lab/LAB) -A1 NV
+   ## VI SEM -Incharge
+   - [ML](https://github.com/Ajith-Kumar-G/Clg-Labs/tree/main/VI/ML_LAB) -A1 KVN
+   - [OOMD]()
+   - [BDA]() -A1 PGB
+   - [RPA]()
