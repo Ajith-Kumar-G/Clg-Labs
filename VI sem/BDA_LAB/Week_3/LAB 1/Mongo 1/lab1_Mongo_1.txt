@@ -1,0 +1,86 @@
+> use mySTUD
+switched to db mySTUD
+
+> db.getCollectionNames()
+[ "Student" ]
+
+> db.Student.insert({_id: 1, Name:"John", USN: "1B22CS001",Semester: 6,Dept_name: "CSE", CGPA: 9.6, Hobbies : ["Reading","Gardening"]})
+WriteResult({ "nInserted" : 1 })
+> db.Student.insert({_id: 2, Name:"Wick", USN: "1B22IS301",Semester: 4,Dept_name: "ISE", CGPA: 8.3, Hobbies : ["Reading","Gardening"]})
+WriteResult({ "nInserted" : 1 })
+> db.Student.insert({_id: 3, Name:"Horris", USN: "1B22EE021",Semester: 5,Dept_name: "EEE", CGPA: 9.3, Hobbies : ["eSports"]})
+WriteResult({ "nInserted" : 1 })
+> db.Student.insert({_id: 4, Name:"Arthur", USN: "1B22CS041",Semester: 6,Dept_name: "CSE", CGPA: 8.6, Hobbies : ["Novel Reading"]})
+WriteResult({ "nInserted" : 1 })
+> db.Student.insert({_id: 5, Name:"Tess", USN: "1B22ME011",Semester: 5,Dept_name: "ME", CGPA: 9.1, Hobbies : ["DIY"]})
+WriteResult({ "nInserted" : 1 })
+> db.Student.insert({_id: 6, Name:"Sylvia", USN: "1B22CS013",Semester: 5,Dept_name: "CSE", CGPA: 9.1, Hobbies : ["DIY"]})
+WriteResult({ "nInserted" : 1 })
+> db.Student.insert({_id: 7, Name:"Hritik", USN: "1B22CS014",Semester: 5,Dept_name: "CSE", CGPA: 8.7, Hobbies : ["Reading"]})
+WriteResult({ "nInserted" : 1 })
+
+> db.Student.find().pretty()
+{
+	"_id" : 1,
+	"Name" : "John",
+	"USN" : "1B22CS001",
+	"Semester" : 6,
+	"Dept_name" : "CSE",
+	"CGPA" : 9.6,
+	"Hobbies" : [
+		"Reading",
+		"Gardening"
+	]
+}
+{
+	"_id" : 2,
+	"Name" : "Wick",
+	"USN" : "1B22IS301",
+	"Semester" : 4,
+	"Dept_name" : "ISE",
+	"CGPA" : 8.3,
+	"Hobbies" : [
+		"Reading",
+		"Gardening"
+	]
+}
+{
+	"_id" : 3,
+	"Name" : "Horris",
+	"USN" : "1B22EE021",
+	"Semester" : 5,
+	"Dept_name" : "EEE",
+	"CGPA" : 9.3,
+	"Hobbies" : [
+		"eSports"
+	]
+}
+{
+	"_id" : 4,
+	"Name" : "Arthur",
+	"USN" : "1B22CS041",
+	"Semester" : 6,
+	"Dept_name" : "CSE",
+	"CGPA" : 8.6,
+	"Hobbies" : [
+		"Novel Reading"
+	]
+}
+{
+	"_id" : 5,
+	"Name" : "Tess",
+	"USN" : "1B22ME011",
+	"Semester" : 5,
+	"Dept_name" : "ME",
+	"CGPA" : 9.1,
+	"Hobbies" : [
+		"DIY"
+	]
+}
+
+> db.Student.aggregate({$match :{Dept_name:"CSE"}},{$group: {_id:"$Semester",AvgCGPA:{$avg:"$CGPA"}}},{$match :{AvgCGPA:{$gt:7.5}}})
+{ "_id" : 5, "AvgCGPA" : 8.899999999999999 }
+{ "_id" : 6, "AvgCGPA" : 9.1 }
+
+
+

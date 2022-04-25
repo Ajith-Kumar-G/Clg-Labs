@@ -1,0 +1,110 @@
+> use mySTUD
+switched to db mySTUD
+
+> db.createCollection("Bank")
+{ "ok" : 1 }
+
+> db.Bank.insert({name: "Arka", type:"savings", transactions: ["+1000", "-100", "+5000"], Balance:1400})
+WriteResult({ "nInserted" : 1 })
+> db.Bank.insert({name: "Derek", type:"savings", transactions: ["-100", "+300", "+500"], Balance:5500})
+WriteResult({ "nInserted" : 1 })
+> db.Bank.insert({name: "Shreastha", type:"savings", transactions: ["+200", "-300", "+60", "-70"], Balance:8000})
+WriteResult({ "nInserted" : 1 })
+> db.Bank.insert({name: "Harries", type:"savings", transactions: ["+600", "-7000"], Balance:11000})
+WriteResult({ "nInserted" : 1 })
+
+
+
+> db.Bank.update({name:"Derek"},{$pull:{transactions:{$in:["+500"]}}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Bank.find().pretty()
+{
+	"_id" : ObjectId("626649b716596fe24c1442bb"),
+	"name" : "Arka",
+	"type" : "savings",
+	"transactions" : [
+		"+1000",
+		"-100"
+	],
+	"Balance" : 1400
+}
+{
+	"_id" : ObjectId("626649d116596fe24c1442bc"),
+	"name" : "Derek",
+	"type" : "savings",
+	"transactions" : [
+		"-100",
+		"+300"
+	],
+	"Balance" : 5500
+}
+{
+	"_id" : ObjectId("626649f116596fe24c1442bd"),
+	"name" : "Shreastha",
+	"type" : "savings",
+	"transactions" : [
+		"+200",
+		"-300",
+		"+60",
+		"-70"
+	],
+	"Balance" : 8000
+}
+{
+	"_id" : ObjectId("62664a1216596fe24c1442be"),
+	"name" : "Harries",
+	"type" : "savings",
+	"transactions" : [
+		"+600",
+		"-7000"
+	],
+	"Balance" : 11000
+}
+
+> db.Bank.update({name: "Shreastha"},{$pop:{transactions:-1}})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.Bank.find().pretty()
+{
+	"_id" : ObjectId("626649b716596fe24c1442bb"),
+	"name" : "Arka",
+	"type" : "savings",
+	"transactions" : [
+		"+1000",
+		"-100"
+	],
+	"Balance" : 1400
+}
+{
+	"_id" : ObjectId("626649d116596fe24c1442bc"),
+	"name" : "Derek",
+	"type" : "savings",
+	"transactions" : [
+		"-100",
+		"+300"
+	],
+	"Balance" : 5500
+}
+{
+	"_id" : ObjectId("626649f116596fe24c1442bd"),
+	"name" : "Shreastha",
+	"type" : "savings",
+	"transactions" : [
+		"-300",
+		"+60",
+		"-70"
+	],
+	"Balance" : 8000
+}
+{
+	"_id" : ObjectId("62664a1216596fe24c1442be"),
+	"name" : "Harries",
+	"type" : "savings",
+	"transactions" : [
+		"+600",
+		"-7000"
+	],
+	"Balance" : 11000
+}
+
+
+
