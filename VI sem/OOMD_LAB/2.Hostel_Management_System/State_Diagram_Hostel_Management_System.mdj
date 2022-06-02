@@ -1,0 +1,242 @@
+{
+	"_type": "Project",
+	"_id": "AAAAAAFF+h6SjaM2Hec=",
+	"name": "HostelManagement",
+	"ownedElements": [
+		{
+			"_type": "UMLStateMachine",
+			"_id": "AAAAAAGBH5qve75LArw=",
+			"_parent": {
+				"$ref": "AAAAAAFF+h6SjaM2Hec="
+			},
+			"name": "HostelManagement",
+			"ownedElements": [
+				{
+					"_type": "UMLStatechartDiagram",
+					"_id": "AAAAAAGBH5qvfL5NOXk=",
+					"_parent": {
+						"$ref": "AAAAAAGBH5qve75LArw="
+					},
+					"name": "HostelManagement",
+					"ownedViews": [
+						{
+							"_type": "UMLFrameView",
+							"_id": "AAAAAAGBH5t3kL5bPcs=",
+							"_parent": {
+								"$ref": "AAAAAAGBH5qvfL5NOXk="
+							},
+							"model": {
+								"$ref": "AAAAAAGBH5qvfL5MGcQ="
+							},
+							"subViews": [
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAGBH5t3kL5cY9Y=",
+									"_parent": {
+										"$ref": "AAAAAAGBH5t3kL5bPcs="
+									},
+									"font": "Arial;13;0",
+									"left": 67,
+									"top": 93,
+									"width": 113.72802734375,
+									"height": 13,
+									"text": "HostelManagement"
+								},
+								{
+									"_type": "LabelView",
+									"_id": "AAAAAAGBH5t3kL5da94=",
+									"_parent": {
+										"$ref": "AAAAAAGBH5t3kL5bPcs="
+									},
+									"font": "Arial;13;1",
+									"left": 61,
+									"top": 93,
+									"width": 1,
+									"height": 13
+								}
+							],
+							"font": "Arial;13;0",
+							"left": 56,
+							"top": 88,
+							"width": 737,
+							"height": 273,
+							"nameLabel": {
+								"$ref": "AAAAAAGBH5t3kL5cY9Y="
+							},
+							"frameTypeLabel": {
+								"$ref": "AAAAAAGBH5t3kL5da94="
+							}
+						},
+						{
+							"_type": "UMLStateView",
+							"_id": "AAAAAAGBH5uy/r5ojYM=",
+							"_parent": {
+								"$ref": "AAAAAAGBH5qvfL5NOXk="
+							},
+							"model": {
+								"$ref": "AAAAAAGBH5uy/r5nkMA="
+							},
+							"subViews": [
+								{
+									"_type": "UMLNameCompartmentView",
+									"_id": "AAAAAAGBH5uy/r5p5W8=",
+									"_parent": {
+										"$ref": "AAAAAAGBH5uy/r5ojYM="
+									},
+									"model": {
+										"$ref": "AAAAAAGBH5uy/r5nkMA="
+									},
+									"subViews": [
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAGBH5uy/r5qAwQ=",
+											"_parent": {
+												"$ref": "AAAAAAGBH5uy/r5p5W8="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"height": 13
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAGBH5uy/r5rgWk=",
+											"_parent": {
+												"$ref": "AAAAAAGBH5uy/r5p5W8="
+											},
+											"font": "Arial;13;1",
+											"left": 165,
+											"top": 263,
+											"width": 50,
+											"height": 13,
+											"text": "State1"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAGBH5uy/r5sNYw=",
+											"_parent": {
+												"$ref": "AAAAAAGBH5uy/r5p5W8="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"width": 150.998046875,
+											"height": 13,
+											"text": "(from HostelManagement)"
+										},
+										{
+											"_type": "LabelView",
+											"_id": "AAAAAAGBH5uy/r5tcOE=",
+											"_parent": {
+												"$ref": "AAAAAAGBH5uy/r5p5W8="
+											},
+											"visible": false,
+											"font": "Arial;13;0",
+											"height": 13,
+											"horizontalAlignment": 1
+										}
+									],
+									"font": "Arial;13;0",
+									"left": 160,
+									"top": 256,
+									"width": 60,
+									"height": 25,
+									"stereotypeLabel": {
+										"$ref": "AAAAAAGBH5uy/r5qAwQ="
+									},
+									"nameLabel": {
+										"$ref": "AAAAAAGBH5uy/r5rgWk="
+									},
+									"namespaceLabel": {
+										"$ref": "AAAAAAGBH5uy/r5sNYw="
+									},
+									"propertyLabel": {
+										"$ref": "AAAAAAGBH5uy/r5tcOE="
+									}
+								},
+								{
+									"_type": "UMLInternalActivityCompartmentView",
+									"_id": "AAAAAAGBH5uy/r5u48Y=",
+									"_parent": {
+										"$ref": "AAAAAAGBH5uy/r5ojYM="
+									},
+									"model": {
+										"$ref": "AAAAAAGBH5uy/r5nkMA="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLInternalTransitionCompartmentView",
+									"_id": "AAAAAAGBH5uy/r5v3jE=",
+									"_parent": {
+										"$ref": "AAAAAAGBH5uy/r5ojYM="
+									},
+									"model": {
+										"$ref": "AAAAAAGBH5uy/r5nkMA="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"width": 10,
+									"height": 10
+								},
+								{
+									"_type": "UMLDecompositionCompartmentView",
+									"_id": "AAAAAAGBH5uy/r5waoQ=",
+									"_parent": {
+										"$ref": "AAAAAAGBH5uy/r5ojYM="
+									},
+									"model": {
+										"$ref": "AAAAAAGBH5uy/r5nkMA="
+									},
+									"font": "Arial;13;0",
+									"left": 160,
+									"top": 281,
+									"width": 60
+								}
+							],
+							"font": "Arial;13;0",
+							"containerChangeable": true,
+							"left": 160,
+							"top": 256,
+							"width": 60,
+							"height": 40,
+							"nameCompartment": {
+								"$ref": "AAAAAAGBH5uy/r5p5W8="
+							},
+							"internalActivityCompartment": {
+								"$ref": "AAAAAAGBH5uy/r5u48Y="
+							},
+							"internalTransitionCompartment": {
+								"$ref": "AAAAAAGBH5uy/r5v3jE="
+							},
+							"decompositionCompartment": {
+								"$ref": "AAAAAAGBH5uy/r5waoQ="
+							}
+						}
+					]
+				}
+			],
+			"regions": [
+				{
+					"_type": "UMLRegion",
+					"_id": "AAAAAAGBH5qvfL5MGcQ=",
+					"_parent": {
+						"$ref": "AAAAAAGBH5qve75LArw="
+					},
+					"name": "HostelManagement",
+					"vertices": [
+						{
+							"_type": "UMLState",
+							"_id": "AAAAAAGBH5uy/r5nkMA=",
+							"_parent": {
+								"$ref": "AAAAAAGBH5qvfL5MGcQ="
+							},
+							"name": "State1"
+						}
+					]
+				}
+			]
+		}
+	]
+}
