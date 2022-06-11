@@ -1,0 +1,99 @@
+cqlsh> CREATE KEYSPACE Library with replication={ 'class':'SimpleStrategy', 'replication_factor':1};
+
+cqlsh> USE Library
+
+cqlsh:library> CREATE TABLE library_info(
+           ... stud_id int,
+           ... stud_name text,
+           ... book_id int,
+           ... book_name text,
+           ... counter_value counter,
+           ... date_of_issue date,
+           ... PRIMARY KEY((stud_id,book_id),stud_name,book_name,date_of_issue)
+           ... );
+
+cqlsh:library> DESC library_info;
+
+CREATE TABLE library.library_info (
+    stud_id int,
+    book_id int,
+    stud_name text,
+    book_name text,
+    date_of_issue date,
+    counter_value counter,
+    PRIMARY KEY ((stud_id, book_id), stud_name, book_name, date_of_issue)
+) WITH CLUSTERING ORDER BY (stud_name ASC, book_name ASC, date_of_issue ASC)
+    AND bloom_filter_fp_chance = 0.01
+    AND caching = {'keys': 'ALL', 'rows_per_partition': 'NONE'}
+    AND comment = ''
+    AND compaction = {'class': 'org.apache.cassandra.db.compaction.SizeTieredCompactionStrategy', 'max_threshold': '32', 'min_threshold': '4'}
+    AND compression = {'chunk_length_in_kb': '64', 'class': 'org.apache.cassandra.io.compress.LZ4Compressor'}
+    AND crc_check_chance = 1.0
+    AND dclocal_read_repair_chance = 0.1
+    AND default_time_to_live = 0
+    AND gc_grace_seconds = 864000
+    AND max_index_interval = 2048
+    AND memtable_flush_period_in_ms = 0
+    AND min_index_interval = 128
+    AND read_repair_chance = 0.0
+    AND speculative_retry = '99PERCENTILE';
+
+
+cqlsh:library> UPDATE library_info SET counter_value = counter_value + 1  WHERE book_id=100 and stud_id=112 and stud_name='Krishna' and book_name='BDA'and date_of_issue='2020-02-02' ;
+cqlsh:library> UPDATE library_info SET counter_value = counter_value + 1  WHERE book_id=100 and stud_id=112 and stud_name='Krishna' and book_name='BDA'and date_of_issue='2020-02-02' ;
+cqlsh:library> UPDATE library_info SET counter_value = counter_value + 1  WHERE book_id=201 and stud_id=132 and stud_name='Arthur' and book_name='CNS'and date_of_issue='2020-02-05' ;
+cqlsh:library> UPDATE library_info SET counter_value = counter_value + 1  WHERE book_id=111 and stud_id=202 and stud_name='Alan' and book_name='OOMD'and date_of_issue='2020-09-12' ;
+
+
+cqlsh:library> SELECT * FROM library_info;
+
+ stud_id | book_id | stud_name | book_name | date_of_issue | counter_value
+---------+---------+-----------+-----------+---------------+---------------
+     132 |     201 |    Arthur |       CNS |    2020-02-05 |             1
+     112 |     100 |   Krishna |       BDA |    2020-02-02 |             2
+     202 |     111 |      Alan |      OOMD |    2020-09-12 |             1
+
+(3 rows)
+
+
+cqlsh:library> SELECT * from library_info WHERE stud_id=112 and book_id=100;
+
+ stud_id | book_id | stud_name | book_name | date_of_issue | counter_value
+---------+---------+-----------+-----------+---------------+---------------
+     112 |     100 |   Krishna |       BDA |    2020-02-02 |             2
+
+
+cqlsh:library> COPY library_info(stud_id,book_id,stud_name,book_name,date_of_issue,counter_value) TO 'LIB.csv';
+Using 1 child processes
+
+Starting copy of library.library_info with columns [stud_id, book_id, stud_name, book_name, date_of_issue, counter_value].
+Processed: 3 rows; Rate:       1 rows/s; Avg. rate:       1 rows/s
+3 rows exported to 1 files in 2.418 seconds.
+
+
+cqlsh:library> TRUNCATE library_info;
+cqlsh:library> SELECT * FROM library_info;
+
+ stud_id | book_id | stud_name | book_name | date_of_issue | counter_value
+---------+---------+-----------+-----------+---------------+---------------
+
+(0 rows)
+
+
+cqlsh:library> COPY library_info(stud_id,book_id,stud_name,book_name,date_of_issue,counter_value) FROM 'LIB.csv';
+Using 1 child processes
+
+Starting copy of library.library_info with columns [stud_id, book_id, stud_name, book_name, date_of_issue, counter_value].
+Processed: 3 rows; Rate:       3 rows/s; Avg. rate:       5 rows/s
+3 rows imported from 1 files in 0.593 seconds (0 skipped).
+cqlsh:library> SELECT * FROM library_info;
+
+ stud_id | book_id | stud_name | book_name | date_of_issue | counter_value
+---------+---------+-----------+-----------+---------------+---------------
+     132 |     201 |    Arthur |       CNS |    2020-02-05 |             1
+     112 |     100 |   Krishna |       BDA |    2020-02-02 |             2
+     202 |     111 |      Alan |      OOMD |    2020-09-12 |             1
+
+(3 rows)
+
+
