@@ -1123,12 +1123,12 @@
 										"$ref": "AAAAAAGBOgjWtEztU0M="
 									},
 									"font": "Arial;13;0",
-									"left": 466,
-									"top": 323,
+									"left": 432,
+									"top": 275,
 									"width": 33.22998046875,
 									"height": 13,
-									"alpha": 1.5707963267948966,
-									"distance": 15,
+									"alpha": 0.2808376734091942,
+									"distance": 54.120236510939236,
 									"hostEdge": {
 										"$ref": "AAAAAAGBOgjWtEzu6hc="
 									},
@@ -1146,8 +1146,8 @@
 									},
 									"visible": null,
 									"font": "Arial;13;0",
-									"left": 482,
-									"top": 308,
+									"left": 396,
+									"top": 260,
 									"height": 13,
 									"alpha": 1.5707963267948966,
 									"distance": 30,
@@ -1167,8 +1167,8 @@
 									},
 									"visible": false,
 									"font": "Arial;13;0",
-									"left": 482,
-									"top": 353,
+									"left": 396,
+									"top": 305,
 									"height": 13,
 									"alpha": -1.5707963267948966,
 									"distance": 15,
@@ -1186,7 +1186,7 @@
 								"$ref": "AAAAAAGBOgYbN0vd7NE="
 							},
 							"lineStyle": 2,
-							"points": "396:232;396:344;569:344;569:311",
+							"points": "396:232;396:296;512:296",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAGBOgjWtEzvVSA="
@@ -2583,6 +2583,101 @@
 							"propertyLabel": {
 								"$ref": "AAAAAAGBOg3/6U6Hr+A="
 							}
+						},
+						{
+							"_type": "UMLTransitionView",
+							"_id": "AAAAAAGBaDajO1dgSmM=",
+							"_parent": {
+								"$ref": "AAAAAAGBOgJKwEua/+Y="
+							},
+							"model": {
+								"$ref": "AAAAAAGBaDajO1dfzho="
+							},
+							"subViews": [
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAGBaDajO1dhWNQ=",
+									"_parent": {
+										"$ref": "AAAAAAGBaDajO1dgSmM="
+									},
+									"model": {
+										"$ref": "AAAAAAGBaDajO1dfzho="
+									},
+									"font": "Arial;13;0",
+									"left": 352,
+									"top": 369,
+									"width": 72.97265625,
+									"height": 13,
+									"alpha": 1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAGBaDajO1dgSmM="
+									},
+									"edgePosition": 1,
+									"text": "New window"
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAGBaDajO1diMUs=",
+									"_parent": {
+										"$ref": "AAAAAAGBaDajO1dgSmM="
+									},
+									"model": {
+										"$ref": "AAAAAAGBaDajO1dfzho="
+									},
+									"visible": null,
+									"font": "Arial;13;0",
+									"left": 388,
+									"top": 384,
+									"height": 13,
+									"alpha": 1.5707963267948966,
+									"distance": 30,
+									"hostEdge": {
+										"$ref": "AAAAAAGBaDajO1dgSmM="
+									},
+									"edgePosition": 1
+								},
+								{
+									"_type": "EdgeLabelView",
+									"_id": "AAAAAAGBaDajO1djeIo=",
+									"_parent": {
+										"$ref": "AAAAAAGBaDajO1dgSmM="
+									},
+									"model": {
+										"$ref": "AAAAAAGBaDajO1dfzho="
+									},
+									"visible": false,
+									"font": "Arial;13;0",
+									"left": 389,
+									"top": 339,
+									"height": 13,
+									"alpha": -1.5707963267948966,
+									"distance": 15,
+									"hostEdge": {
+										"$ref": "AAAAAAGBaDajO1dgSmM="
+									},
+									"edgePosition": 1
+								}
+							],
+							"font": "Arial;13;0",
+							"head": {
+								"$ref": "AAAAAAGBOgMKZku15zc="
+							},
+							"tail": {
+								"$ref": "AAAAAAGBOgavwkwYwkM="
+							},
+							"lineStyle": 2,
+							"points": "552:311;552:360;226:360;226:243",
+							"showVisibility": true,
+							"nameLabel": {
+								"$ref": "AAAAAAGBaDajO1dhWNQ="
+							},
+							"stereotypeLabel": {
+								"$ref": "AAAAAAGBaDajO1diMUs="
+							},
+							"propertyLabel": {
+								"$ref": "AAAAAAGBaDajO1djeIo="
+							}
 						}
 					]
 				}
@@ -2983,6 +3078,29 @@
 										"$ref": "AAAAAAGBOg3/6U6DkOE="
 									},
 									"name": "display on"
+								}
+							]
+						},
+						{
+							"_type": "UMLTransition",
+							"_id": "AAAAAAGBaDajO1dfzho=",
+							"_parent": {
+								"$ref": "AAAAAAGBOgJKv0uZRa0="
+							},
+							"source": {
+								"$ref": "AAAAAAGBOgavwkwXiFE="
+							},
+							"target": {
+								"$ref": "AAAAAAGBOgMKZku0scc="
+							},
+							"triggers": [
+								{
+									"_type": "UMLEvent",
+									"_id": "AAAAAAGBaDbbkldxs8Y=",
+									"_parent": {
+										"$ref": "AAAAAAGBaDajO1dfzho="
+									},
+									"name": "New window"
 								}
 							]
 						}
