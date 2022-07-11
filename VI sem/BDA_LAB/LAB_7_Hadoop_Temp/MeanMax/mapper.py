@@ -1,8 +1,6 @@
 #!/usr/bin/python
 import sys
 
-sumt = 0
-count = 0
 for line in sys.stdin:
 	line = line.strip()
 	

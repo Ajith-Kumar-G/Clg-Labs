@@ -13,5 +13,5 @@ for line in sys.stdin:
 	
 	quality = line[92:93]
 	
-	if temperature != None and quality in "[01458]":
+	if temperature != 9999 and quality in "[01459]":
 		print(year+"\t"+str(temperature))
