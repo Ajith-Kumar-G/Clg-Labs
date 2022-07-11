@@ -8,11 +8,11 @@ val sorted=ListMap(counts.collect.sortWith(_._2  _._2)_*)
 
 println(sorted)
 
-for((k,v)-sorted)
+for((k,v)<-sorted)
 {
-if(v4)
+if(v>4)
 {
-print(k+,)
+print(k+",")
 print(v)
 println()
 }
